@@ -9,11 +9,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class onBoard_MainActivity : AppCompatActivity() {
+class onBoard2_MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_on_board_main)
+        setContentView(R.layout.activity_on_board2_main)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -21,9 +21,9 @@ class onBoard_MainActivity : AppCompatActivity() {
         }
 
         //button click
-        val btnNext = findViewById<Button>(R.id.button1)
+        val btnNext = findViewById<Button>(R.id.buttons)
         btnNext.setOnClickListener {
-            val intent = Intent(this, onBoard2_MainActivity::class.java)
+            val intent = Intent(this, onBoard3_MainActivity::class.java)
 
             // Create custom animation
             val options = ActivityOptions.makeCustomAnimation(
@@ -34,7 +34,7 @@ class onBoard_MainActivity : AppCompatActivity() {
             startActivity(intent, options.toBundle())
         }
 
-
-
     }
+
+
 }
