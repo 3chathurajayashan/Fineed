@@ -12,6 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fineed">
         <activity
+            android:name=".signup_page_MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".signin_page_MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".signIn_page_MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Home_page_MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".main_screen"
+            android:exported="false" />
+        <activity
             android:name=".onBoard3_MainActivity"
             android:exported="false" />
         <activity
