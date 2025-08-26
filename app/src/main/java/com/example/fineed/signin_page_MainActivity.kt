@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.text.TextPaint
+import android.widget.Button
 
 class signin_page_MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,6 +28,16 @@ class signin_page_MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val signUpButton = findViewById<Button>(R.id.signbutton) // Make sure your button has this ID in XML
+        signUpButton.setOnClickListener {
+            // You can add validation here before redirecting
+            val intent = Intent(this, finalOnboard_MainActivity::class.java)
+            startActivity(intent)
+            finish() // optional: closes the signup page
+        }
+
+
 
         val signUpText = findViewById<TextView>(R.id.textViewSignUp)
 
