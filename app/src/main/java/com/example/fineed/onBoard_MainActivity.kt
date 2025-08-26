@@ -20,19 +20,25 @@ class onBoard_MainActivity : AppCompatActivity() {
             insets
         }
 
-        //button click
         val btnNext = findViewById<Button>(R.id.button1)
         btnNext.setOnClickListener {
-            val intent = Intent(this, onBoard2_MainActivity::class.java)
+            // Animate button press (scale effect)
+            btnNext.animate().scaleX(0.95f).scaleY(0.95f).setDuration(100)
+                .withEndAction {
+                    btnNext.animate().scaleX(1f).scaleY(1f).setDuration(100).start()
 
-            // Create custom animation
-            val options = ActivityOptions.makeCustomAnimation(
-                this,
-                R.anim.slide_in_right,
-                R.anim.slide_out_left
-            )
-            startActivity(intent, options.toBundle())
+                    // After button animation completes, move to next activity
+                    val intent = Intent(this, onBoard2_MainActivity::class.java)
+                    val options = ActivityOptions.makeCustomAnimation(
+                        this,
+                        R.anim.slide_in_right,
+                        R.anim.slide_out_left
+                    )
+                    startActivity(intent, options.toBundle())
+                }.start()
         }
+
+
 
 
 
