@@ -16,12 +16,13 @@
         android:src="@drawable/header_wave"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <!-- Header Greeting -->
+    <!-- Header Greeting with Profile Icon -->
     <LinearLayout
         android:id="@+id/headerContent"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginTop="40dp"
@@ -29,21 +30,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Hello, Chathura"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#FFFFFF"/>
+            android:orientation="vertical"
+            android:layout_weight="1">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Find your dream job today"
-            android:textSize="14sp"
-            android:textColor="#DDFFFFFF"
-            android:layout_marginTop="4dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello, Chathura"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Find your dream job today"
+                android:textSize="14sp"
+                android:textColor="#DDFFFFFF"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+        <!-- User Profile Icon -->
+        <ImageView
+            android:id="@+id/profileIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/user2"
+            android:scaleType="centerCrop"
+            android:layout_marginStart="12dp"
+            android:padding="2dp"/>
     </LinearLayout>
 
     <!-- Slim Search Bar -->
@@ -127,7 +145,8 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <!-- Slim Horizontal Job Card with Image -->
+                    <!-- Include all horizontal job cards here as in your original code -->
+                    <!-- Example Horizontal Card -->
                     <androidx.cardview.widget.CardView
                         android:layout_width="160dp"
                         android:layout_height="160dp"
@@ -175,7 +194,54 @@
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
-                    <!-- Slim Horizontal Job Card with Image -->
+                    <!-- Add other horizontal cards similarly -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_marginEnd="12dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="2dp"
+                        android:background="#FFFFFF">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="12dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:src="@drawable/chat"
+                                android:scaleType="centerInside"
+                                android:layout_marginBottom="8dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="AI /ML developer"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textColor="#333"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="open AI · Remote"
+                                android:textSize="12sp"
+                                android:textColor="#666"
+                                android:layout_marginTop="4dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Full-time"
+                                android:textSize="12sp"
+                                android:textColor="#999"
+                                android:layout_marginTop="2dp"/>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
                     <androidx.cardview.widget.CardView
                         android:layout_width="160dp"
                         android:layout_height="160dp"
@@ -208,7 +274,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Nike · fullTime"
+                                android:text="Nike · Remote"
                                 android:textSize="12sp"
                                 android:textColor="#666"
                                 android:layout_marginTop="4dp"/>
@@ -222,57 +288,6 @@
                                 android:layout_marginTop="2dp"/>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
-
-
-                    <!-- Slim Horizontal Job Card with Image -->
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="160dp"
-                        android:layout_height="160dp"
-                        android:layout_marginEnd="12dp"
-                        app:cardCornerRadius="16dp"
-                        app:cardElevation="2dp"
-                        android:background="#FFFFFF">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:padding="12dp">
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="60dp"
-                                android:src="@drawable/chat"
-                                android:scaleType="centerInside"
-                                android:layout_marginBottom="8dp"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="AI/ML developer"
-                                android:textSize="14sp"
-                                android:textStyle="bold"
-                                android:textColor="#333"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="open AI · Remote"
-                                android:textSize="12sp"
-                                android:textColor="#666"
-                                android:layout_marginTop="4dp"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Full-time"
-                                android:textSize="12sp"
-                                android:textColor="#999"
-                                android:layout_marginTop="2dp"/>
-                        </LinearLayout>
-                    </androidx.cardview.widget.CardView>
-
-                    <!-- Another Horizontal Card -->
                     <androidx.cardview.widget.CardView
                         android:layout_width="160dp"
                         android:layout_height="160dp"
@@ -297,7 +312,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Product Manager"
+                                android:text="Tech Lead"
                                 android:textSize="14sp"
                                 android:textStyle="bold"
                                 android:textColor="#333"/>
@@ -305,7 +320,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="HP Team · Hybrid"
+                                android:text="Nike team · Remote"
                                 android:textSize="12sp"
                                 android:textColor="#666"
                                 android:layout_marginTop="4dp"/>
@@ -319,9 +334,6 @@
                                 android:layout_marginTop="2dp"/>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
-
-                    <!-- Add more horizontal cards similarly -->
-
                 </LinearLayout>
             </HorizontalScrollView>
 
@@ -345,7 +357,7 @@
                 android:paddingEnd="16dp"
                 android:layout_marginTop="8dp">
 
-                <!-- Vertical Job Card 1 -->
+                <!-- Example Vertical Job Card -->
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -384,7 +396,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Google · Remote"
+                                android:text="nvidia · Remote"
                                 android:textSize="12sp"
                                 android:textColor="#666"
                                 android:layout_marginTop="2dp"/>
@@ -400,117 +412,6 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- Vertical Job Card 2 -->
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="12dp"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="2dp"
-                    android:background="#FFFFFF">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:padding="12dp">
-
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:src="@drawable/sony"
-                            android:scaleType="centerInside"
-                            android:layout_marginEnd="12dp"/>
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Team Manager"
-                                android:textSize="14sp"
-                                android:textStyle="bold"
-                                android:textColor="#333"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Sony · Hybrid"
-                                android:textSize="12sp"
-                                android:textColor="#666"
-                                android:layout_marginTop="2dp"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Full-time"
-                                android:textSize="12sp"
-                                android:textColor="#999"
-                                android:layout_marginTop="2dp"/>
-                        </LinearLayout>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- Add more vertical cards similarly -->
-                <!-- Vertical Job Card 2 -->
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="12dp"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="2dp"
-                    android:background="#FFFFFF">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:padding="12dp">
-
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:src="@drawable/intel"
-                            android:scaleType="centerInside"
-                            android:layout_marginEnd="12dp"/>
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Web Developer"
-                                android:textSize="14sp"
-                                android:textStyle="bold"
-                                android:textColor="#333"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Microsoft · Hybrid"
-                                android:textSize="12sp"
-                                android:textColor="#666"
-                                android:layout_marginTop="2dp"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Full-time"
-                                android:textSize="12sp"
-                                android:textColor="#999"
-                                android:layout_marginTop="2dp"/>
-                        </LinearLayout>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-                <!-- Vertical Job Card 2 -->
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -541,7 +442,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Tech Lead"
+                                android:text="Branch Manager"
                                 android:textSize="14sp"
                                 android:textStyle="bold"
                                 android:textColor="#333"/>
@@ -549,7 +450,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Tecent · Hybrid"
+                                android:text="Taser · Remote"
                                 android:textSize="12sp"
                                 android:textColor="#666"
                                 android:layout_marginTop="2dp"/>
@@ -564,7 +465,8 @@
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
-                <!-- Vertical Job Card 2 -->
+
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -595,7 +497,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Lead Driver"
+                                android:text="Senior Developer"
                                 android:textSize="14sp"
                                 android:textStyle="bold"
                                 android:textColor="#333"/>
@@ -603,7 +505,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Uber · FullTime"
+                                android:text="Uber · Remote"
                                 android:textSize="12sp"
                                 android:textColor="#666"
                                 android:layout_marginTop="2dp"/>
@@ -618,7 +520,8 @@
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
-                <!-- Vertical Job Card 2 -->
+
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -636,7 +539,7 @@
                         <ImageView
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            android:src="@drawable/huawei"
+                            android:src="@drawable/dell"
                             android:scaleType="centerInside"
                             android:layout_marginEnd="12dp"/>
 
@@ -649,7 +552,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Product Manager"
+                                android:text="Project Manager"
                                 android:textSize="14sp"
                                 android:textStyle="bold"
                                 android:textColor="#333"/>
@@ -657,7 +560,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Microsoft · Hybrid"
+                                android:text="dell Team · Remote"
                                 android:textSize="12sp"
                                 android:textColor="#666"
                                 android:layout_marginTop="2dp"/>
@@ -673,6 +576,115 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
+                    android:background="#FFFFFF">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="12dp">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/facebook"
+                            android:scaleType="centerInside"
+                            android:layout_marginEnd="12dp"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Team Lead"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textColor="#333"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Google · Remote"
+                                android:textSize="12sp"
+                                android:textColor="#666"
+                                android:layout_marginTop="2dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Full-time"
+                                android:textSize="12sp"
+                                android:textColor="#999"
+                                android:layout_marginTop="2dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
+                    android:background="#FFFFFF">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="12dp">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/intel"
+                            android:scaleType="centerInside"
+                            android:layout_marginEnd="12dp"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Senior Software Engineer"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textColor="#333"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Google · Remote"
+                                android:textSize="12sp"
+                                android:textColor="#666"
+                                android:layout_marginTop="2dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Full-time"
+                                android:textSize="12sp"
+                                android:textColor="#999"
+                                android:layout_marginTop="2dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Repeat other vertical cards exactly as in your original code -->
             </LinearLayout>
 
         </LinearLayout>

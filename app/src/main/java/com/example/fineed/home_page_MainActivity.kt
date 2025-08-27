@@ -2,6 +2,7 @@ package com.example.fineed
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -18,6 +19,15 @@ class home_page_MainActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+
+        // Get the profile icon
+        val profileIcon = findViewById<ImageView>(R.id.profileIcon)
+
+        // Set click listener
+        profileIcon.setOnClickListener {
+            val intent = Intent(this, userProfile_MainActivity::class.java)
+            startActivity(intent)
         }
 
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNavigation)

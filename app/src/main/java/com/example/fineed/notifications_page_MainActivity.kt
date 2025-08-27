@@ -72,9 +72,15 @@ class notifications_page_MainActivity : AppCompatActivity() {
 
         // Dummy notification data (replace with DB/API later)
         val notifications = listOf(
-            Notification("John", "liked your post", "2 hours ago", R.drawable.user, R.drawable.heart),
-            Notification("Sarah", "commented on your photo", "5 hours ago", R.drawable.user, R.drawable.comment),
-            Notification("Mike", "added a new post", "1 day ago", R.drawable.user, R.drawable.write)
+            Notification("Minula ", "liked your post", "2 hours ago", R.drawable.user, R.drawable.heart),
+            Notification("Sewni", "commented on your post", "5 hours ago", R.drawable.user, R.drawable.comment),
+            Notification("Bineth", "added a new post", "1 day ago", R.drawable.user, R.drawable.write),
+            Notification("Nvidea ", "liked your post", "2 hours ago", R.drawable.user, R.drawable.heart),
+        Notification("IBM", "shared a post", "5 hours ago", R.drawable.user, R.drawable.write),
+        Notification("Samsung", "added a new post", "1 day ago", R.drawable.user, R.drawable.write),
+        Notification("Google ", "liked your post", "2 hours ago", R.drawable.google, R.drawable.heart),
+        Notification("Hirusha", "commented on your photo", "5 hours ago", R.drawable.user, R.drawable.comment),
+
         )
 
         recyclerView.adapter = NotificationAdapter(notifications)
