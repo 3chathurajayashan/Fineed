@@ -1,5 +1,6 @@
 package com.example.fineed
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 // -------- MODEL CLASS --------
 data class Notification(
@@ -76,5 +78,27 @@ class notifications_page_MainActivity : AppCompatActivity() {
         )
 
         recyclerView.adapter = NotificationAdapter(notifications)
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNavigation)
+        bottomNav.setOnItemSelectedListener { item ->
+            when(item.itemId){
+                R.id.nav_home -> {
+                    val intent = Intent(this, home_page_MainActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.nav_search -> {
+                    val intent = Intent(this, search_page_MainActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.nav_notifications -> {
+                    val intent = Intent(this, notifications_page_MainActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                else -> false
+            }
+        }
     }
+
 }

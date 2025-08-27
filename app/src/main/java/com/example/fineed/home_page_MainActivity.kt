@@ -33,7 +33,8 @@ class home_page_MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.nav_notifications -> {
-                    // Handle notifications navigation
+                    val intent = Intent(this, notifications_page_MainActivity::class.java)
+                    startActivity(intent)
                     true
                 }
                 else -> false
