@@ -359,14 +359,17 @@
                 android:layout_marginTop="8dp">
 
                 <!-- Example Vertical Job Card -->
-                <androidx.cardview.widget.CardView
+                <!-- Example Vertical Job Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/firstJobCard"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     app:cardCornerRadius="16dp"
-                    app:cardElevation="2dp"
-                    android:background="#FFFFFF">
-
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="@android:color/white"
+                    android:clickable="true"
+                    android:focusable="true">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -411,7 +414,8 @@
                                 android:layout_marginTop="2dp"/>
                         </LinearLayout>
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
+
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"

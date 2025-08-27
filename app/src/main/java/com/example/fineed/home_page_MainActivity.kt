@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.bottomnavigation.BottomNavigationView
-
+import com.google.android.material.card.MaterialCardView
 class home_page_MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,6 +19,13 @@ class home_page_MainActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+
+        // =========== First Job Card ============
+        val firstJobCard = findViewById<MaterialCardView>(R.id.firstJobCard)
+        firstJobCard.setOnClickListener {
+            val intent = Intent(this, applyjob_page_MainActivity::class.java)
+            startActivity(intent)
         }
 
         // Get the profile icon
