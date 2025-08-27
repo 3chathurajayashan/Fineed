@@ -52,6 +52,7 @@ class NotificationAdapter(private val notifications: List<Notification>) :
     override fun getItemCount(): Int = notifications.size
 }
 
+
 // -------- MAIN ACTIVITY --------
 class notifications_page_MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,6 +67,14 @@ class notifications_page_MainActivity : AppCompatActivity() {
             insets
         }
 
+        // Find the settings icon
+        val settingsIcon = findViewById<ImageView>(R.id.settingsIcon)
+
+        // Click listener to open settings page
+        settingsIcon.setOnClickListener {
+            val intent = Intent(this, setting_page_MainActivity::class.java)
+            startActivity(intent)
+        }
         // RecyclerView setup
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerViewNotifications)
         recyclerView.layoutManager = LinearLayoutManager(this)

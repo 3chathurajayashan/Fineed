@@ -60,6 +60,7 @@
             android:layout_height="48dp"
             android:src="@drawable/user2"
             android:scaleType="centerCrop"
+            app:tint="#FFFFFF"
             android:layout_marginStart="12dp"
             android:padding="2dp"/>
     </LinearLayout>

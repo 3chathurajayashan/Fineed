@@ -37,6 +37,14 @@ class signin_page_MainActivity : AppCompatActivity() {
             finish() // optional: closes the signup page
         }
 
+        // Get the TextView
+        val forgetPasswordText = findViewById<TextView>(R.id.textView7)
+
+        // Set click listener
+        forgetPasswordText.setOnClickListener {
+            val intent = Intent(this, forget_password_MainActivity::class.java)
+            startActivity(intent)
+        }
 
 
         val signUpText = findViewById<TextView>(R.id.textViewSignUp)

@@ -3,28 +3,20 @@ package com.example.fineed
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class userProfile_MainActivity : AppCompatActivity() {
+class setting_page_MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_user_profile_main)
-
+        setContentView(R.layout.activity_setting_page_main)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
-        }
-
-        // back button
-        val backButton = findViewById<ImageButton>(R.id.backButton)
-        backButton.setOnClickListener {
-            finish()
         }
 
         val signoutbtn = findViewById<Button>(R.id.signOutButton) // Make sure your button has this ID in XML
@@ -35,12 +27,5 @@ class userProfile_MainActivity : AppCompatActivity() {
             finish() // optional: closes the signup page
         }
 
-
-        // edit button
-        val editButton = findViewById<ImageButton>(R.id.editButton)
-        editButton.setOnClickListener {
-            val intent = Intent(this, EditProfile_MainActivity::class.java)
-            startActivity(intent)
-        }
     }
 }

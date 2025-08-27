@@ -2,45 +2,40 @@ package com.example.fineed
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import android.widget.Button
+import android.widget.TextView
 
-class userProfile_MainActivity : AppCompatActivity() {
+class forget_password_MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_user_profile_main)
+        setContentView(R.layout.activity_forget_password_main)
 
+        // Apply edge-to-edge padding
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        // back button
-        val backButton = findViewById<ImageButton>(R.id.backButton)
-        backButton.setOnClickListener {
-            finish()
-        }
-
-        val signoutbtn = findViewById<Button>(R.id.signOutButton) // Make sure your button has this ID in XML
-        signoutbtn.setOnClickListener {
-            // You can add validation here before redirecting
+        // Back to Sign In click
+        val backToSignIn = findViewById<TextView>(R.id.backToSignIn)
+        backToSignIn.setOnClickListener {
             val intent = Intent(this, signin_page_MainActivity::class.java)
             startActivity(intent)
-            finish() // optional: closes the signup page
+            finish() // optional: prevent going back to forget password page
         }
 
-
-        // edit button
-        val editButton = findViewById<ImageButton>(R.id.editButton)
-        editButton.setOnClickListener {
-            val intent = Intent(this, EditProfile_MainActivity::class.java)
+        // Navigate to reset_after_MainActivity when clicking Reset Password
+        val resetButton = findViewById<Button>(R.id.resetPasswordButton)
+        resetButton.setOnClickListener {
+            val intent = Intent(this, reset_after_MainActivity::class.java)
             startActivity(intent)
+            finish() // optional: prevents going back to this page
         }
     }
 }

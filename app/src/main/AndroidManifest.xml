@@ -12,6 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fineed">
         <activity
+            android:name=".reset_after_MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".forget_password_MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".setting_page_MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditProfile_MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".userProfile_MainActivity"
             android:exported="false" />
         <activity
