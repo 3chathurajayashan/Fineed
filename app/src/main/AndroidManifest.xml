@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fineed">
         <activity
+            android:name=".notifications_page_MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".search_page_MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".home_page_MainActivity"
             android:exported="false" />
         <activity

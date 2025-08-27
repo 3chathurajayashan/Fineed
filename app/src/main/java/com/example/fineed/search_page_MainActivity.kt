@@ -8,12 +8,11 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class home_page_MainActivity : AppCompatActivity() {
+class search_page_MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_home_page_main)
-
+        setContentView(R.layout.activity_search_page_main)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -24,6 +23,8 @@ class home_page_MainActivity : AppCompatActivity() {
         bottomNav.setOnItemSelectedListener { item ->
             when(item.itemId){
                 R.id.nav_home -> {
+                    val intent = Intent(this, home_page_MainActivity::class.java)
+                    startActivity(intent)
                     // Already on home
                     true
                 }
